@@ -1,0 +1,5 @@
+es-AR:
+   activerecord:
+    attributes:
+      user:
+        first_name: Nombre
