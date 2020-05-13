@@ -1,6 +1,7 @@
 %nav
-  .nav-wrapper
-    %a.brand-logo{:href => "#"} Logo
+  .nav-wrapper.blue
+    %a{:href => "#"}
+      %img.brand-logo{:alt => "", :src => "#{asset_path("images/logo.jpg")}"}/
     %ul#nav-mobile.right.hide-on-med-and-down
       %li
         %a{:href => "sass.html"} Sass

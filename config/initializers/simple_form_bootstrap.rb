@@ -421,6 +421,20 @@ SimpleForm.setup do |config|
   # The default wrapper to be used by the FormBuilder.
   config.default_wrapper = :materialize_form
 
+  config.wrappers :materialize_horizontal_file, class: 'file-field input-field', error_class: 'has_error' do |b|
+    b.use :html5
+    b.use :placeholder
+    b.wrapper tag: 'div', class: 'btn' do |ba|
+      ba.wrapper tag: 'span' do |sp|
+        sp.use :label_text
+      end
+      ba.use :input, type: 'file'
+    end
+    b.wrapper tag: 'div', class: 'file-path-wrapper' do |ba|
+      ba.use :input, class: 'file-path validate', type: 'text', placeholder: 'Upload one or more files', id: '', name: ''
+    end
+  end
+
   # Custom wrappers for input types. This should be a hash containing an input
   # type as key and the wrapper that will be used for all inputs with specified type.
   config.wrapper_mappings = {
@@ -428,7 +442,7 @@ SimpleForm.setup do |config|
     check_boxes:   :horizontal_collection,
     date:          :horizontal_multi_select,
     datetime:      :horizontal_multi_select,
-    file:          :horizontal_file,
+    file:          :materialize_horizontal_file,
     radio_buttons: :horizontal_collection,
     range:         :horizontal_range,
     time:          :horizontal_multi_select

@@ -1,0 +1,19 @@
+.card.guarian-card.left
+  .card-image.waves-effect.waves-block.waves-light
+    //%img.activator{:src => "images/office.jpg"}/
+    = image_tag user.thumbnail_photo, class: :activator
+  .card-content
+    %span.card-title.activator.grey-text.text-darken-4
+      = user.full_name
+      %i.material-icons.right more_vert
+    %p
+      = link_to "Modificar", edit_user_path(user)
+  .card-reveal
+    %span.card-title.grey-text.text-darken-4
+      = user.full_name
+      %i.material-icons.right close
+    %dl.dl-horizontal
+      %dt Teléfono:
+      %dd= user.cellphone
+      %dt Dirección:
+      %dd= user.address

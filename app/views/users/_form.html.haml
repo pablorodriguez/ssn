@@ -1,11 +1,14 @@
 = simple_form_for(@user,html: { class: 'form-horizontal' } ) do |f|
-  = f.input :first_name
-  = f.input :last_name
-  = f.input :email
-  = f.input :cellphone
-  = f.input :address
-  = f.input :city
-  = f.input :state
+  = f.input :first_name, label_html: { class: 'active'}
+  = f.input :last_name,label_html: { class: 'active'}
+  = f.input :photo
+  - if @user.photo.attached?
+    = image_tag @user.thumbnail_photo
+  = f.input :email,label_html: { class: 'active'}
+  = f.input :cellphone,label_html: { class: 'active'}
+  = f.input :address,label_html: { class: 'active'}
+  = f.input :city,label_html: { class: 'active'}
+  = f.input :state,label_html: { class: 'active'}
   .form-group.row
     .col-md-9.offset-md-3
       = f.submit 'Save', class: "btn btn-primary"
