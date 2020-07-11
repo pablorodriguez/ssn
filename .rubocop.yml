@@ -1,0 +1,20 @@
+AllCops:
+  Exclude:
+    - node_modules/**/*
+    - tmp/**/*
+    - vendor/**/*
+    - .git/**/*
+    - bin/**/*
+    - db/schema.rb
+    - db/migrate/**/*
+    - config/initializers/**/*
+
+Style/Documentation:
+  Enabled: false
+Metrics/BlockLength:
+  Exclude:
+    - "spec/**/*"
+    - describe
+    - context
+    - factory
+    - define
